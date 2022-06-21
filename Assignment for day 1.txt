@@ -1,0 +1,84 @@
+
+1.Explain the use of JavaScript ( or What you can do using a JavaScript)
+
+    JavaScript is a text-based programming language used in both on the client-side and server-side that allows you to make web pages interactive.
+    Where the Html and css are languages that give structure and style to web pages,javascript give the interactive elements that engage a user.
+
+2.What is the difference between client-side and server-side?
+    Client-side -> Its mean's that the processing takes place on the user's computer.
+                   It requires browsers to run the script on the client machine without involving any processing on the server.
+
+    Server-side -> It's mean's that the processing takes place on a web server. 
+
+3.What is Nodejs?
+    * Nodejs is a open-source,cross-platform,back-end javascript runtime environment.
+    * Nodejs runs on the V8 engine and executes javascript code outside a web browser.
+
+4.Explain Scope in JavaScript?
+    
+    The javascript Scope are divide into 3 types are:
+       - Block scope
+       - Function scope
+       - Global scope
+   Scope determines the accessibility(visibility) of varibles.
+
+ ->Block Scope :
+     - The block scope restricts the variable that is declared inside a specific block,form access by the outside of the block.
+     - Let and const are the keywords in the javascript block scope
+        
+       Let keywords
+     {
+       let amount = 0;
+     }
+
+       const keywords
+     {
+        const pi = 3.14;
+     }
+     - variables declared with the var keyword can not have block scope.
+     - Variables declared inside a {} block can be accessed form outside the block.
+ ->Function Scope :
+    -Each function creates a new scope.
+    -Variables defined inside a function are not accessible(visible)from outside the function.
+    -Variables declared with var,let and const are quite similar when declared inside a function.
+       
+        Var keyword
+      function myfunction() {
+            var name = "Rama";
+       }
+
+        Let keyword
+      function myfunction() {
+            let name = "Rama";
+      }
+   
+        Const keyword
+     function myfunction() {
+            const name = "Rama";
+      }
+  ->Global Scope :
+     -Variables declared globally (outside any function) have global scope.
+     -Global variables can be accessed from anywhere in a javascript program.
+     -Variables declared with var,let and const are quite similar when declared outside a block.
+
+    const number = 123;
+    function myfunction() {
+          document.getElementById('demo").innerHTML = number;
+   }
+
+7.Explain DOM in your own word?
+    - The DOM is a W3C (World wide web consortium) standard.
+    - The W3C Document object model(DOM) is a platform and language-neutral interface that allows programs and scripts to dynamically access and update the             content,structure,and style of a document.
+    - The W3C DOM standard is separated into 3 different parts:
+        * Core DOM -standard model for all document types
+        * XML DOM  -standard model for HTML documents
+        * HTML DOM -standard model for HTML documents
+
+5.JavaScript is asynchronous or synchronous?
+
+     - Javascript is both asynchronous and synchronous,since using promises javascript is a asynchronous.
+
+6.JavaScript is Single-threaded or Multi-threaded?
+
+     -Javascript is single-threaded.
+     -It has one call stack and one memory heap.as expected,it executes code in order and must finish executing a piece code before moving onto the next.
