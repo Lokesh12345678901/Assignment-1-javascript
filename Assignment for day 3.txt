@@ -1,0 +1,119 @@
+Assignment for Day 3
+
+1.List all the Escape Sequences characters in javascript?
+
+  -> \' single quote
+  -> \" double quote
+  -> \ backslash
+  -> \n new line
+  -> \r carriage return
+  -> \t tab
+  -> \b backslash
+  -> \f form feed
+  -> \v vertical tab (IE < 9 treats '\v' as 'v'instead of a vertical tab ("\x0B"). if cross-browser compatibility is a concern, use \x0B instead of \v)
+  -> \0 null character(U+0000 null)
+
+2. Explain with example length and substring methods in javascript ?
+ 
+   Length : The length property returns the length of a string.
+            The length property of an empty string is 0.
+    
+          ex: let len = "hello word!";
+              console.log(len.length);
+  Substring is a subset of another string.
+  Substring has 3 different ways are:
+      ->Substring() method
+      ->Slice() method
+      ->Substr() method
+
+   Substring()method:
+   
+         The substring() method basically gets a part of the original string and returns it as a new string.
+         The substring() method expects two parameters:
+                 string.substring(startIndex,endIndex);
+           where ->startIndex: Represents the starting point of the substring.
+                 ->endIndex: Represents the ending point of the substring(optional) 
+       eg: let substring = "Represents the starting point of the substring";
+           let x = substring.substring(0,15);
+           console.log(x);
+       Some additional points:
+          1.If startIndex = endIndex, the substring method returns an empty string.
+          2.If startIndex and endIndx are both greater than the length of the string,it returns an empty string.
+          3.If startIndex > endIndex,then the substring method swaps the arguments and returns a substring, as the endIndex > startIndex.
+  
+  Slice() method:
+
+        The slice()method is similar to the substring() method and it also returns a substring of the original string.
+        The slice method has expeects the two parameters:
+              where ->startIndex: Represents the starting point of the substring.
+                    ->endIndex: Represents the ending point of the substring(optional)
+       eg: let stringslice = "Represents the starting point of the substring";
+           let x = stringslice.slice(0,15);
+           console.log(x);
+   Differences of the slice() method:
+      1. If startIndex > endIndex, the slice() method returns an empty string.
+      2. If startIndex is a negative number, then the first character begins from the end of the string(reverse).
+    eg: let x = stringslice.slice(-3);
+
+  Substr()method:
+        
+       The Substr() method is considered a legacy function and its use should be avoided.
+       The Substr() method also returns a substring of the original string and expects two parameters as:
+          startIndex : Represents the starting point of the substring
+          length : number of characters to be included(optional)
+       string.substring(startIndex,length);
+
+      The substr() method expects the second parameter as a length instead of an endIndex
+           let mystring = "number of characters to be included"
+           let x =mystring.substr(5,5);
+           console.log(x);
+
+3.What are padStart and padEnd in javascript, explain with an example ?
+
+     padStart and padEnd are two new methods available on javascript strings.
+     As their name implies,they allow for formatting a string by adding padding characters at the start or the end.
+     padStart and padEnd are two methods are new and browser support is still very limited.
+     The methods work in the same way, with the only difference being that with padStart the padding is added at the start of the string and with padEnd the padding added at then end.
+     They take a targetLength argument for the desired length or the string an optional padString argument that defaults to a space when not provided.The padString will be repeated if needed to fill the desired targetLength.
+         padStart example
+    eg:
+         const string = "dom";
+         const newstring = string.padStart(6,"5");
+         console.log(newstring);
+  Result:
+          66dom
+ 
+         padEnd example
+
+  eg:
+      const string = "dom";
+      const newstring = string.padEnd(6,"5");
+      console.log(newstring);
+  Result :
+         dom66
+
+    another example
+  
+   const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+   numbers.forEach((n) => {
+        console.log(n.tostring().padStart(2,"0"));
+       });
+
+4.Define Global Object in javascript along with the global scope?
+   
+  Global object in javascript:
+      A global object is an object that always in the global scope.
+      In javascript, there's always a global object defined.
+      In a web browser, when script create global variables defined with the var keyword, they're created as members of the global object.
+
+  Global scope:
+     The javascript global scope is the context where everything in a javascript program executes by default.
+     This scope includes all variables, objects, and references that are not contained within a customized scope dfined by a programmer.
+     Global scope is the entire javascript execution environment.
+
+5.List all the names of Javascript engines present currently?
+    
+     -> V8 from Google is the most used javascript engine. Google chrome and the many other Chromium-based browsers use it, as do applications built with CEF,Election,or any other framework that embeds Chromium.Other uses inculde the node.js and Deno runtime systems.
+     -> SpiderMonkey is developed by mozilla for use in Firefox and its forks. The Gnome Shell uses it for extension support.
+     -> JavascriptCore is Apple's engine for its Safari browser. Other Webkit-based browsers also use it.KJS from KDE was the starting point for its development.
+     -> Chakra is the engine of the internet Explorer browser.It was also forked by Microsoft for the original Edge browser, but Edge was later rebuilt as a chromium-based beowser and thus now uses V8.
